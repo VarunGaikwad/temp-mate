@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  @apply min-h-screen w-screen p-6 bg-background text-gray-100 grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4;
+}
+
+.header__input {
+  @apply flex items-center bg-primary bg-opacity-20 gap-4 w-fit p-3 rounded-md;
+}
+
+.header__input > input {
+  @apply bg-transparent placeholder:text-white outline-none w-full;
+}
+
+.city__weather__card {
+  @apply flex flex-col justify-between bg-accent bg-opacity-30 h-80 py-6 px-10 rounded-3xl;
+}
+
+.city__weather__card__temperature {
+  @apply flex-1 flex items-center gap-2 flex-col font-medium;
+}
