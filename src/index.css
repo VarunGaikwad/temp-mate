@@ -12,6 +12,10 @@ main {
   @apply min-h-screen w-screen p-6 bg-background text-gray-100 grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4;
 }
 
+.common_card {
+  @apply flex flex-col bg-opacity-15 h-80 rounded-3xl;
+}
+
 .header__input {
   @apply flex items-center bg-primary bg-opacity-20 gap-4 w-fit p-3 rounded-md;
 }
@@ -21,9 +25,21 @@ main {
 }
 
 .city__weather__card {
-  @apply flex flex-col justify-between bg-accent bg-opacity-30 h-80 py-6 px-10 rounded-3xl;
+  @apply common_card bg-accent justify-between py-6 px-10;
 }
 
 .city__weather__card__temperature {
   @apply flex-1 flex items-center gap-2 flex-col font-medium;
+}
+
+.popular_cities {
+  @apply common_card bg-secondary py-6 px-10;
+}
+
+.forcast {
+  @apply common_card bg-secondary py-6 px-10;
+}
+
+.temperature_area_chart {
+  @apply common_card bg-alert col-span-3 pb-1 pt-4 h-72;
 }
