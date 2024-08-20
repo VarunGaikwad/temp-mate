@@ -4,7 +4,7 @@ import L from "leaflet";
 import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import iconUrl from "leaflet/dist/images/marker-icon.png";
 import shadowUrl from "leaflet/dist/images/marker-shadow.png";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Context from "../data/GlobalModel";
 
 // Define a custom marker icon

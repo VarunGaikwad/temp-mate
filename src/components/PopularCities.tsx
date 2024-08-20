@@ -1,38 +1,9 @@
-import { Cloud, CloudDrizzle, CloudFog, CloudRain, CloudSnow, Sun, SunSnow, Zap } from "lucide-react";
+import { Cloud, CloudDrizzle, CloudFog, CloudRain, CloudSnow, Sun, Zap } from "lucide-react";
 import { useContext } from "react";
 import Context from "../data/GlobalModel";
 import WeatherCode from "../data/WeatherCode";
 
 export default function PopularCities() {
-
-    const cities = [
-        {
-            name: "Delhi",
-            description: "Partly Cloudy",
-            icon: <Cloud />
-        },
-        {
-            name: "Bangalore",
-            description: "Sunny",
-            icon: <SunSnow />
-        },
-        {
-            name: "Pune",
-            description: "Cloudy",
-            icon: <CloudFog />
-        },
-        {
-            name: "Mumbai",
-            description: "Cloudy",
-            icon: <CloudFog />
-        },
-        {
-            name: "Hyderabad",
-            description: "Cloudy",
-            icon: <CloudFog />
-        }
-    ]
-
     const { weatherInfo: { near_cities } } = useContext(Context);
 
     return (
