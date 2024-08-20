@@ -5,7 +5,7 @@ import Map from "./components/Map";
 import PopularCities from "./components/PopularCities";
 import TemperatureAreaChart from "./components/TemperatureAreaChart";
 import WaitingView from "./components/WaitingView";
-import PullWeatherInfo from "./data/pullWeatherInfo";
+import PullWeatherInfo from "./data/PullWeatherInfo";
 import Context from "./data/GlobalModel";
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
     const [lat, lon] = coordinates;
     if (!lat || !lon) return;
     setIsLoading(true);
-    PullWeatherInfo({ lat: coordinates[0], lon: coordinates[1] }).then((data) => {
+    PullWeatherInfo({ lat, lon }).then((data) => {
       setWeatherInfo(data);
       setIsLoading(false);
     });
@@ -39,7 +39,7 @@ export default function App() {
 
 
   return (
-    <Context.Provider value={{ weatherInfo }}>
+    <Context.Provider value={{ weatherInfo, setCoordinates }}>
       <main role="main">
         <CityWeather />
         <Map />

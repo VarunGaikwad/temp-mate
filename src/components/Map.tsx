@@ -4,7 +4,8 @@ import L from "leaflet";
 import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import iconUrl from "leaflet/dist/images/marker-icon.png";
 import shadowUrl from "leaflet/dist/images/marker-shadow.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import Context from "../data/GlobalModel";
 
 // Define a custom marker icon
 const customIcon = new L.Icon({
@@ -34,20 +35,8 @@ function LocationMarker({ setPosition }: TLocationMarker) {
 }
 
 export default function Map() {
-    const storedPosition = JSON.parse(localStorage.getItem("position") || "[]"),
-        [position, setPosition] = useState<[number, number] | null>(storedPosition.length ? storedPosition : null); // Initial state is null
-
-    useEffect(() => {
-        navigator.geolocation.getCurrentPosition(
-            ({ coords: { latitude, longitude } }) => {
-                setPosition([latitude, longitude]);
-            },
-            (error) => {
-                console.error("Error fetching location:", error);
-                setPosition([51.505, -0.09]);
-            }
-        );
-    }, []);
+    const { weatherInfo, setCoordinates } = useContext(Context),
+        position: [number, number] = [weatherInfo.latitude, weatherInfo.longitude];
 
     if (!position) {
         return <div>Loading Map...</div>;
@@ -56,8 +45,8 @@ export default function Map() {
     return (
         <MapContainer
             center={position}
-            zoom={13}
-            className="h-80 rounded-2xl md:col-span-2"
+            zoom={9}
+            className="rounded-3xl md:col-span-2 h-custom"
         >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -68,7 +57,7 @@ export default function Map() {
                     Selected location: <br /> Latitude: {position[0]}, Longitude: {position[1]}
                 </Popup>
             </Marker>
-            <LocationMarker setPosition={setPosition} />
+            <LocationMarker setPosition={setCoordinates} />
         </MapContainer>
     );
 }

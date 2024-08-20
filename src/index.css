@@ -9,11 +9,15 @@
 }
 
 main {
-  @apply min-h-screen w-screen p-6 bg-background text-gray-100 grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4;
+  @apply min-h-screen w-screen p-2 bg-background text-gray-100 grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4;
+}
+
+.h-custom {
+  height: 21.95rem;
 }
 
 .common_card {
-  @apply flex flex-col bg-opacity-15 h-80 rounded-3xl;
+  @apply flex flex-col bg-opacity-15 rounded-3xl h-custom;
 }
 
 .header__input {
@@ -25,7 +29,7 @@ main {
 }
 
 .city__weather__card {
-  @apply common_card bg-accent justify-between py-6 px-10;
+  @apply common_card bg-accent justify-between p-6;
 }
 
 .city__weather__card__temperature {
@@ -33,11 +37,11 @@ main {
 }
 
 .popular_cities {
-  @apply common_card bg-secondary py-6 px-10;
+  @apply common_card bg-secondary p-6;
 }
 
 .forcast {
-  @apply common_card bg-secondary py-6 px-10;
+  @apply common_card bg-secondary p-6;
 }
 
 .temperature_area_chart {
