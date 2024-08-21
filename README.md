@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# TempMate Application README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+Welcome to **TempMate**, your go-to weather information application. TempMate provides accurate and up-to-date weather information for any city around the globe. Whether you're planning a trip or just curious about the weather, TempMate has you covered.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Real-time Weather Data**: Get current weather conditions, temperature, humidity, wind speed, and more.
+- **Search by City**: Simply enter the name of the city to get instant weather updates.
+- **Responsive Design**: Enjoy a seamless experience on both desktop and mobile devices.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+To use TempMate, you only need a web browser and an internet connection.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Accessing TempMate
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+You can access the TempMate application through the following URL: [TempMate](https://varungaikwad.github.io/temp-mate/).
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Using TempMate
+
+**Homepage**: On the homepage, you will find a search bar where you can enter the name of the city you want to check the weather for.
+
+![TempMate Homepage](./screenshot/image.png)
+
+## Technologies Used
+
+- **Frontend**: React.js for building the user interface.
+- **Backend**: Node.js for server-side logic.
+- **API**: Weather data is fetched from [Open-Meteo](https://open-meteo.com/).
+- **Hosting**: Vercel for seamless deployment and hosting.
+
+## Contributing
+
+We welcome contributions from the community. To contribute to TempMate, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Create a pull request to the main repository.
+
+## License
+
+TempMate is licensed under the MIT License. See the LICENSE file for more details.
+
+## Contact
+
+For any questions or suggestions, feel free to reach out to us at:
+
+- **Email**: gaikwadvarun23@gmail.com
+- **LinkedIn**: [Varun Gaikwad](https://www.linkedin.com/in/varun-gaikwad/)
+
+Thank you for using TempMate! We hope you have a great experience with our application.
